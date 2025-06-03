@@ -1806,3 +1806,49 @@ input, select, textarea {
 	background: rgba(255,255,255,0.3);
 	margin: 0.5rem auto;
 }
+
+@media (max-width: 640px) {
+	.kelleys-testimonials {
+	  /* switch to one auto‐sized column */
+	  grid-template-columns: 1fr;
+	  /* stack each area on its own row */
+	  grid-template-areas:
+		"first"
+		"second"
+		"third"
+		"caption";
+	  /* tighten up horizontal gaps (no need for two columns) */
+	  column-gap: 0;
+	  /* maybe reduce vertical spacing if you want */
+	  row-gap: 1rem;
+	  /* keep it full‐width or close to it on very narrow screens */
+	  max-width: 100%;
+	  margin: 1.5rem auto; /* smaller top/bottom margin if desired */
+	  padding: 0 1rem;     /* some side padding so images don’t touch edges */
+	}
+  
+	/* You can drop the justify‐self/align‐self adjustments—by default each figure will now expand to fill its row. */
+	.kelleys-testimonials figure:nth-of-type(1),
+	.kelleys-testimonials figure:nth-of-type(2),
+	.kelleys-testimonials figure:nth-of-type(3) {
+	  justify-self: stretch;
+	  align-self: stretch;
+	}
+  
+	/* Keep each image at 100% of its (now narrower) container */
+	.kelleys-testimonials img {
+	  max-width: 100%;
+	}
+  }
+
+  @media (max-width: 640px) {
+	.patty-testimonials > .patty-images {
+	  flex-direction: column;
+	  gap: 1rem;          /* a bit less gap when stacked */
+	}
+  
+	.patty-testimonials img {
+	  max-width: 100%;    /* let each image fill its container on small screens */
+	}
+  }
+  
